@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0.4
+
+- README rewritten in English and brought up to date. The package page on PyPI was
+  rendering the Russian one — PyPI is an international index, and the page is the first
+  thing a developer sees.
+- Documents what the agent gained since 2.0.3: streaming, conversation memory, image
+  attachments, mentor mode, reconnecting to a running generation, cancelling one, and
+  listing conversations.
+
 ## 2.0.3
 
 - Repository, issues and changelog links added to the package metadata.
