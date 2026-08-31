@@ -1,0 +1,29 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mobiss11/daepak-mcp",
+  "title": "Daepak Market Intelligence",
+  "description": "Crypto, Korean market (kimchi premium decomposed, Upbit listings), US equities, options, indicators, backtests and a trading journal - 98 tools over one API key.",
+  "version": "2.0.5",
+  "websiteUrl": "https://daepak.com/developers",
+  "repository": {
+    "url": "https://github.com/Mobiss11/daepak-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "daepak-mcp",
+      "version": "2.0.5",
+      "runtimeHint": "uvx",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "DAEPAK_API_KEY",
+          "description": "API key from the Keys page at daepak.com (dpk_live_...)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

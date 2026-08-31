@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.5 — 2026-08-31
+
+- MCP Registry readiness: `server.json` (io.github.mobiss11/daepak-mcp) and the
+  `mcp-name` ownership marker in the package README/metadata. No code changes.
+
 ## 2.0.4
 
 - README rewritten in English and brought up to date. The package page on PyPI was
