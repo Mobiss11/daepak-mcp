@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.3
+
+- Repository, issues and changelog links added to the package metadata.
+  (PyPI does not accept a re-upload of an existing version, even with changed
+  metadata — hence the bump.)
+
 ## 2.0.2
 
 - Server version is now read from package metadata instead of being hard-coded,
