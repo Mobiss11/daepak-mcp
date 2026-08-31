@@ -1,0 +1,40 @@
+# Упаковка MCP-сервера. Публикация — одна команда владельца:
+#   cd mcp && python -m build && python -m twine upload dist/*
+# После этого подключение к любому движку становится:
+#   claude mcp add daepak -e DAEPAK_API_KEY=dpk_live_… -- uvx daepak-mcp
+#
+# ⚠️ Единственная зависимость — certifi, и она вынужденная. Сервер писался «без
+# зависимостей», но проверка на чистом venv показала: без certifi вызов падает с
+# CERTIFICATE_VERIFY_FAILED (сборки Python для macOS не используют системное хранилище
+# сертификатов). У меня это не воспроизводилось, потому что certifi стоял в окружении
+# проекта. Красивый принцип «ноль зависимостей» здесь означал бы сломанную установку у
+# целой платформы.
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "daepak-mcp"
+version = "2.0.2"
+description = "Daepak market intelligence tools over MCP"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["mcp", "market-data", "crypto", "korea", "trading"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = ["certifi>=2024.2.2"]
+
+[project.urls]
+Homepage = "https://daepak.com"
+
+[project.scripts]
+daepak-mcp = "daepak_agent_mcp:main"
+
+[tool.hatch.build.targets.wheel]
+include = ["daepak_agent_mcp.py"]
+
+[tool.hatch.build.targets.sdist]
+include = ["daepak_agent_mcp.py", "README.md", "pyproject.toml"]
