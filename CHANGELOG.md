@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.6 — 2026-08-31
+
+- Fix registry namespace casing: `io.github.Mobiss11/daepak-mcp` (grants are
+  case-sensitive and match the GitHub login). 2.0.5 shipped the lowercase
+  marker and PyPI never accepts a rebuilt file under the same version.
+
 ## 2.0.5 — 2026-08-31
 
 - MCP Registry readiness: `server.json` (io.github.mobiss11/daepak-mcp) and the
