@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.mobiss11/daepak-mcp",
+  "name": "io.github.Mobiss11/daepak-mcp",
   "title": "Daepak Market Intelligence",
   "description": "Market analyst tools + AI agent: crypto, US equities, options, Korean market, backtests, journal",
   "version": "2.0.5",

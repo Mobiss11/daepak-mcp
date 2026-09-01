@@ -1,6 +1,6 @@
 # Daepak MCP
 
-<!-- mcp-name: io.github.mobiss11/daepak-mcp -->
+<!-- mcp-name: io.github.Mobiss11/daepak-mcp -->
 
 Market intelligence tools for any MCP-capable engine — Claude Code, Claude Desktop, or your
 own agent. Prices, indicators, levels, positioning, the Korean market, US equities, options,
