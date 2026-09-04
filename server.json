@@ -3,7 +3,7 @@
   "name": "io.github.Mobiss11/daepak-mcp",
   "title": "Daepak Market Intelligence",
   "description": "Market analyst tools + AI agent: crypto, US equities, options, Korean market, backtests, journal",
-  "version": "2.0.6",
+  "version": "2.1.0",
   "websiteUrl": "https://daepak.com/developers",
   "repository": {
     "url": "https://github.com/Mobiss11/daepak-mcp",
@@ -13,7 +13,7 @@
     {
       "registryType": "pypi",
       "identifier": "daepak-mcp",
-      "version": "2.0.6",
+      "version": "2.1.0",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"
@@ -26,6 +26,12 @@
           "isSecret": true
         }
       ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://daepak.com/mcp"
     }
   ]
 }

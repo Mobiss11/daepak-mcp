@@ -4,13 +4,39 @@
 
 Market intelligence tools for any MCP-capable engine — Claude Code, Claude Desktop, or your
 own agent. Prices, indicators, levels, positioning, the Korean market, US equities, options,
-backtests, and your own trading journal. **98 tools**, the same ones the product's own
+backtests, and your own trading journal. **100 tools**, the same ones the product's own
 analyst uses.
 
 The server describes nothing itself: it pulls the catalogue from `GET /v1/tools`, so it
 shows exactly what your key is allowed to call and never drifts from the product.
 
 ## Quick start
+
+### No install — remote server (recommended)
+
+The same tools are served at `https://daepak.com/mcp` (Streamable HTTP) with OAuth 2.1:
+you sign in once in the browser, no key to copy.
+
+```bash
+claude mcp add --transport http daepak https://daepak.com/mcp
+```
+
+Then `/mcp` inside Claude Code → **daepak** → Authenticate. Works the same way as a custom
+connector in Claude.ai (paste the URL) and in ChatGPT developer mode. For Codex CLI:
+
+```toml
+[mcp_servers.daepak]
+url = "https://daepak.com/mcp"
+```
+
+Prefer a key instead of OAuth (servers, CI)? Send it as a header:
+
+```bash
+claude mcp add --transport http daepak https://daepak.com/mcp --header "Authorization: Bearer dpk_live_…"
+```
+
+### Local (stdio)
+
 
 ```bash
 claude mcp add daepak -e DAEPAK_API_KEY=dpk_live_… -- uvx daepak-mcp

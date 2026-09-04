@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.0 — 2026-09-03
+
+- Remote server: the same tools at `https://daepak.com/mcp` (Streamable HTTP) with
+  OAuth 2.1 — no key to copy; `remotes` added to `server.json`. Bearer keys still work
+  via the Authorization header.
+- 100 tools (Korean fundamentals from OpenDART, KRX-wide screener with RS percentiles).
+
 ## 2.0.6 — 2026-08-31
 
 - Fix registry namespace casing: `io.github.Mobiss11/daepak-mcp` (grants are
