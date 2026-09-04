@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.1.1 — 2026-09-04
+
+- Documentation only: 108 tools. New on the server side — `get_macro_snapshot` /
+  `get_macro_series` (FRED), `get_us_financials` (SEC EDGAR, US-GAAP and IFRS, up to 20
+  years), `compare_financials` (Korean and US companies in one schema),
+  `backtest_kr_portfolio` (against KOSPI), plus `list_kr_etfs` and foreign-ownership flow
+  in `screen_kr`. No code change: the server pulls the catalogue from `/v1/tools`, so
+  existing installs already see them.
+
 ## 2.1.0 — 2026-09-03
 
 - Remote server: the same tools at `https://daepak.com/mcp` (Streamable HTTP) with

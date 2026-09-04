@@ -4,7 +4,7 @@
 
 Market intelligence tools for any MCP-capable engine — Claude Code, Claude Desktop, or your
 own agent. Prices, indicators, levels, positioning, the Korean market, US equities, options,
-backtests, and your own trading journal. **100 tools**, the same ones the product's own
+backtests, macro (FRED), SEC and OpenDART fundamentals, and your own trading journal. **108 tools**, the same ones the product's own
 analyst uses.
 
 The server describes nothing itself: it pulls the catalogue from `GET /v1/tools`, so it
@@ -68,7 +68,7 @@ The catalogue is filtered by your key's scopes — you never see a tool you cann
 
 | scope | tools | what it opens |
 |---|---|---|
-| `read:market` | 78 | prices, candles, indicators, levels, scores, narratives, derivatives, order book, liquidations, options, US equities, Korean market, backtests |
+| `read:market` | 88 | prices, candles, indicators, levels, scores, narratives, derivatives, order book, liquidations, options, US equities, Korean market, fundamentals (OpenDART, SEC), macro (FRED), backtests |
 | `read:personal` | 9 | your positions, portfolio, trade journal, catalysts, memory, background tasks |
 | `write:personal` | 11 | writing to those same records |
 | `agent:chat` | — | full analyst answers, streamed or complete |
@@ -85,6 +85,17 @@ and the currency leg), Korean tickers, fresh Upbit listings
 **US equities** — `get_stock_quote`, `get_stock_history`, `get_stock_levels`,
 `get_stock_holders` (institutions and insiders), `get_us_gap_stats`, `get_us_movers`,
 `get_us_halts`, `get_us_insiders`
+
+**Fundamentals from primary sources** — `get_kr_financials` (K-IFRS for any KRX listing,
+OpenDART), `get_us_financials` (US-GAAP and IFRS by fiscal year from SEC EDGAR, up to 20
+years), `compare_financials` (Korean and US companies in one schema, USD at the FRED rate),
+`get_kr_insiders`, `screen_kr` (the whole KRX with RS percentiles and foreign-ownership
+flow), `get_kr_rs`, `list_kr_etfs`, `backtest_kr_portfolio` (against KOSPI)
+
+**Macro** — `get_macro_snapshot` (Fed funds, US 2Y/10Y and the curve, broad dollar,
+USD/KRW, VIX, CPI as YoY, unemployment, Korean overnight rate), `get_macro_series` (any
+FRED id with history). Every row carries `stale_days`; Korean CPI is absent on purpose —
+FRED's series died in 2023.
 
 **Options** — `get_iv_metrics`, `get_options_positioning`, `get_option_structure` (payoff and
 greeks), `get_options_backtest`
